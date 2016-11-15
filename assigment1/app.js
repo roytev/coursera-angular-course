@@ -8,12 +8,13 @@ LunchController.$inject = ['$scope'];
 function LunchController($scope) {
   $scope.color = "primary";
   $scope.string = "";
+  $scope.message = "";
 
   $scope.checkTooMuch = function () {
     var items = $scope.string.split(',');
     var itemsCount = items.length;
     switch (true) {
-      case (itemsCount == 1):
+      case ($scope.string == ""):
         $scope.message = "Please enter data first";
         $scope.color = "danger";
       break;
